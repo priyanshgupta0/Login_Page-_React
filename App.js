@@ -23,6 +23,7 @@ const App = () => {
   }
   const clearFun = () => {
     setOResult('')
+    setOtpv('');
     setEResult('');
     setEmail('');
     setPassword('');
@@ -46,19 +47,19 @@ const App = () => {
     let otp = Otpv;
     var value = Otpv;
     if (value.length == 4) {
-      setOResult('')
+      setOResult('');
+      Data.push({
+        id: a,
+        Email: email,
+        Password: pass,
+        Otp: otp,
+        visible: false,
+      })
+      console.log(Data);
+      setId(Id + 1);
     } else {
       setOResult('Enter a valid OTP')
     }
-    Data.push({
-      id: a,
-      Email: email,
-      Password: pass,
-      Otp: otp,
-      visible: false,
-    })
-    console.log(Data);
-    setId(Id + 1);
   }
   const handleSubmit = () => {
     let email = Email;
